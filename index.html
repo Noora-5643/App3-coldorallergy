@@ -42,7 +42,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
         function allergyAdd(){
             allergy_count = allergy_count + 1;
-<!--deleted alert for allergy count-->
+<!--Deleted alert for allergy count-->
 
         }
 
@@ -50,6 +50,17 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             cold_count = cold_count + 1;
         }
 
+<!--Added function to show results-->
+functiom showResults(){
+	var total = cold_count + allergy_count;
+	var allergy_pct = allergy_count/total;
+	var cold_pct = cold/count/total;
+	var paragraph = document.getElementById("res");
+	var text = "The Probability it is allergies = "+ allergy_pct*100 + "%" + "<br>Probability it is cold = " + cold_pct*100 + "%";
+	paragraph.innerHTML = text;
+
+}
+	
   </script>
 
 
@@ -165,16 +176,26 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
     	<div id="content" class="w3-container">
-	<p>Do you have muscle aches?</p>  
+	<p>Do you have body aches?</p>  
 	<!--Added Yes or No Button to Question 5-->
-	<!--Changed href to six-->
+	<!--Changed href to results-->
 	<!--Changed no to allergy and yes for cold-->
-		<a href="#six"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
-		<a href="#six"  onclick="allergyAdd();" class="w3-btn w3-black"> No</a>
+	<!--Added show results-->
+		<a href="#results"  onclick="coldAdd(); showResults()" class="w3-btn w3-black"> Yes </a>
+		<a href="#results"  onclick="allergyAdd(); showResults()" class="w3-btn w3-black"> No </a>
 	</div><!-- /content -->
     	</div>
 </div>
 
+<!--Added results section-->
+<div class="page" id="results">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Results</h1>
+	</div>
+	<div id="content" class="w3-container w3-flat-carrot">
+		<h1>Question 5</h1>
+	</div>
+</div>
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
