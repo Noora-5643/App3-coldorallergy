@@ -53,12 +53,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <!--Added function to show results-->
 function showResults(){
 <!--This will display results in a paragraph-->
-	var paragraph = document.getElementById("results");
-	var allergyPercent = (allergy_count/total)*100;
-	var coldPercent = (cold_count/total)*100
+	var resultParagraph = document.getElementById("results");
+<!--This will find the total amount of allergy and cold symptoms-->
+	var allergyPercent = (allergy_count/5) * 100;
+	var coldPercent = (cold_count/5) * 100
 	var total = cold_count + allergy_count;
 <!--Added probability it will be cold or allergy-->
-	resultParagraph.innerHTML = "Your probability it is allergies = "+ allergyPercent + "%" + "<br> Your probability it is a cold = " + coldPercent + "%";
+	var resultParagraph.innerHTML = "Your probability it is allergies = "+ allergyPercent + "%" + "<br> Your probability it is a cold = " + coldPercent + "%";
 	paragraph.innerHTML = text;
 
 }
@@ -89,6 +90,7 @@ function showResults(){
 }
 </style>
 
+	<!--Formats and starts question 1-->
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
 	<h1>Cold or Allergies?</h1>
@@ -183,19 +185,21 @@ function showResults(){
 	<!--Changed href to results-->
 	<!--Changed no to allergy and yes for cold-->
 	<!--Added show results-->
-		<a href="#results"  onclick="coldAdd(); showResults()" class="w3-btn w3-black"> Yes </a>
-		<a href="#results"  onclick="allergyAdd(); showResults()" class="w3-btn w3-black"> No </a>
+		<a href="#six"  onclick="coldAdd(); showResults()" class="w3-btn w3-black"> Yes </a>
+		<a href="#six"  onclick="allergyAdd(); showResults()" class="w3-btn w3-black"> No </a>
 	</div><!-- /content -->
     	</div>
 </div>
 
 <!--Added results section-->
-<div class="page" id="results">
+<div class="page" id="six">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Results!</h1>
 	</div>
 	<div id="content" class="w3-container w3-flat-carrot">
-		
+	<a onclick="diagnosisResults();" class="w3-btn w3-grey w3-round"> Click for Results </a>
+		<p id="results" ></p>
+	</div>
 	</div>
 </div>
 <footer class="w3-bottom w3-container w3-flat-carrot">
