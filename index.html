@@ -50,17 +50,18 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             cold_count = cold_count + 1;
         }
 
-<!--Added function to show results-->
+// Added function to show results
 function showResults(){
 <!--This will display results in a paragraph-->
 	var resultParagraph = document.getElementById("results");
 <!--This will find the total amount of allergy and cold symptoms-->
-	var allergyPercent = (allergy_count/5) * 100;
-	var coldPercent = (cold_count/5) * 100
+	var allergyPercent = ((allergy_count/5) * 100);
+	var coldPercent = ((cold_count/5) * 100);
 	var total = cold_count + allergy_count;
 <!--Added probability it will be cold or allergy-->
-	var resultParagraph.innerHTML = "Your probability it is allergies = "+ allergyPercent + "%" + "<br> Your probability it is a cold = " + coldPercent + "%";
-	paragraph.innerHTML = text;
+	resultParagraph.innerHTML = 
+	"Your probability it is allergies = " + allergyPercent + "%" + 
+	"<br> Your probability it is a cold = " + coldPercent + "%";
 
 }
 	
@@ -197,7 +198,7 @@ function showResults(){
 		<h1>Results!</h1>
 	</div>
 	<div id="content" class="w3-container w3-flat-carrot">
-	<a onclick="diagnosisResults();" class="w3-btn w3-grey w3-round"> Click for Results </a>
+	<a href="#six" onclick ="showResults();" class="w3-btn w3-grey w3-round"> Click for Results </a>
 		<p id="results" ></p>
 	</div>
 	</div>
