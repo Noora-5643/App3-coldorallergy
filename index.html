@@ -62,7 +62,8 @@ function showResults(){
 	resultParagraph.innerHTML = 
 	"Your probability it is allergies = " + allergyPercent + "%" + 
 	"<br> Your probability it is a cold = " + coldPercent + "%";
-	
+
+ resultParagraph.style.display = "block"; // This will make the results hidden until the button is clicked
 // Changed <!--...--> to slashes so the code doesn't break
 }
 	
@@ -92,7 +93,7 @@ function showResults(){
 }
 </style>
 
-	<!--Formats and starts question 1-->
+	<!--This Formats and starts question 1-->
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
 	<h1>Cold or Allergies?</h1>
@@ -128,7 +129,7 @@ function showResults(){
 	</div>
 	
 	<div id="content" class="w3-container">
-	<!--Added Question 2-->
+	<!--This asks the second question-->
 		<p> Do you have a fever?</p>
 	<!--Added Yes or No Button to Question 2-->
 	<!--Switched yes and no button for Question 2-->
@@ -202,6 +203,7 @@ function showResults(){
 	<div id="content" class="w3-container w3-flat-carrot">
 	<a href="#six"  onclick ="showResults();" class="w3-btn w3-grey w3-round"> Click for Results </a>
 		<p id="results" ></p>
+		 <a href="#" onclick="resetQuiz();" class="w3-btn w3-red w3-round">Restart Quiz</a>
 	</div>
 	</div>
 </div>
